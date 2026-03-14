@@ -155,7 +155,7 @@ img {
         rgba(0, 0, 0, 0.829),
         rgba(0, 0, 0, 0.548)
     ),
-    url("/assets/img/54-JPG_0100.jpg");
+    url("../assets/img/54-JPG_0100.jpg");
     background-size: cover;
     background-position: center;
 
