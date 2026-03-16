@@ -19,3 +19,16 @@ window.addEventListener('scroll', () => {
 
     lastScrollY = currentScrollY;
 });
+
+const btn = document.getElementById("btnVerMas");
+const texto = document.getElementById("sobreTxt");
+
+btn.addEventListener("click", ()=>{
+    texto.classList.toggle("expandido");
+
+    if(texto.classList.contains("expandido")){
+        btn.textContent = "Ver menos";
+    }else{
+        btn.textContent = "Ver más";
+    }
+});
