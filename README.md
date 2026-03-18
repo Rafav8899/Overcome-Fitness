@@ -1,4 +1,4 @@
-# Overcome Fitness ☕
+# Overcome Fitness 💪
 
 Landing page para un emprendimiento de Personal Trainers.
 
