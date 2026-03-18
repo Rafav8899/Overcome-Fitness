@@ -567,7 +567,6 @@ img {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 3rem;
-        /* align-items: start; */
         justify-content: center;
         justify-items: center;
     }
