@@ -284,81 +284,153 @@ img {
    VALORES / SERVICIOS
 ========================= */
 
-.values {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 4rem 1.25rem;
+/* .servicios {
+    padding: 3rem 1.25rem;
+    text-align: center;
 }
 
-.value{
+.servicios h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family:'UnifrankturCook';
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.services-text{
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    color:var(--color-muted);
+} */
+.servicio-header{
+    padding: 1.2rem;
+    /* display: flex; */
+     text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.041);
+}
+/*
+.servicio-content{
     background-color: var(--color-surface);
+    transition: var(--transition);
     box-shadow:var(--shadow);
     border-radius: 10px;
+    overflow: hidden;
     padding: 2rem;
-    transition: var(--transition);
+    width: 100%;
+    cursor: pointer;
 }
 
-.value h3 {
+.servicio-header h3 {
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
     text-align: center;
 }
 
-.value p {
+.servicio p {
     color: var(--color-muted);
     font-size: 0.95rem;
     text-align: center;
 }
 
-.value:hover{
+.servicio:hover{
     transform: scale(1.05);
     background-color: var(--color-secondary);
     box-shadow: 0 0 15px rgba(34, 155, 13, 0.3);
     color:var(--color-bg)
-}
+} */ 
 
 /* =========================
    PLANES / METODOLOGIA
 ========================= */
 
-.planes {
-    /* padding-top: 4rem;
-    padding-bottom: 4rem; */
-    padding: 3rem ;
-    justify-content: center;
+.planes,
+.servicios {
+    padding: 3rem 1.25rem;
+    text-align: center;
 }
 
-.planes h2 {
+.planes h2,
+.servicios h2 {
     text-align: center;
     margin-bottom: 2rem;
     font-family:'UnifrankturCook';
-    /* font-size: 2rem; */
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-
-.menu__category {
-    margin-bottom: 2.5rem;
+.texto-planes,
+.services-text{
     text-align: center;
-    padding: 2rem;
-    border-radius: 20px;
-    transition: var(--transition);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    color:var(--color-muted);
+}
+.cards,
+.services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+.card,
+.servicio{
     background: var(--color-surface);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+    width: 100%;
 }
-.menu__category:hover{
-    transform: scale(1.05);
+.card-header {
+    padding: 1.2rem;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    background: rgba(158, 31, 31, 0.021);
+}
+.card-icon{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    transition: transform 0.3s ease;
+}
+/* CONTENIDO (oculto) */
+.card-content, 
+.servicio-content{
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1.2rem;
+    color: var(--color-muted);
+    text-align: start;
+
+    transition: max-height 0.4s ease;
+}
+.card-content p, 
+.servicio-content p {
+    padding-bottom: 5px;
 }
 
-.menu__category h3 {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+/* ACTIVO */
+.card.active .card-content, 
+.servicio.active .servicio-content{
+    max-height: 1000px;
+    padding: 1rem 1.2rem 1.5rem;
+}
+.card.active .card-icon{
+    transform: rotate(45deg); /* + → × */
 }
 
-.menu__category li {
-    padding: 0.4rem 0;
-    border-bottom: 1px solid var(--color-secondary);
-    font-size: 0.95rem;
+/* HOVER */
+.card:hover, 
+.servicio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(57,255,20,0.2);
 }
 
 /* =========================
@@ -413,8 +485,8 @@ img {
 
 .contacto {
     text-align: center;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 .contacto h2{
     font-size: 2rem;
@@ -455,17 +527,9 @@ img {
     text-align: center;
     font-size: 0.85rem;
     color: var(--color-muted);
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding:2rem;
     justify-content: center;
 }
-
-/* .footer .social {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-} */
 
 /* =========================
    TABLET
@@ -481,7 +545,7 @@ img {
         font-size: 1.15rem;
     }
 
-    .values {
+    .servicios {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 2rem;
@@ -491,16 +555,27 @@ img {
         flex: 1 1 45%;
     }
 
-    .planes {
-        display: grid;
+    .planes,
+    .servicios {
         grid-template-columns: repeat(2, 1fr);
-        gap: 2.5rem;
         justify-content: center;
         justify-items: center;
     }
 
-    .planes h2 {
+    .planes h2,
+    .servicios h2 {
         grid-column: 1 / -1;
+    } 
+    .cards,
+    .services{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .card,
+    .servicio{
+        width: 45%;
+        max-width: none;
     }
 
     .profes-grid{
@@ -552,30 +627,38 @@ img {
         font-size: 1.05rem;
     }
 
-    .values {
+    /* .servicios {
         flex-direction: row;
         justify-content: space-between;
         gap: 3rem;
-    }
+    } */
 
-    .value {
+    /* .value {
         flex: 1;
-    }
+    } */
 
-    .planes {
-        display: grid;
+    /* PLANES */
+    .planes,
+    .servicios {
         grid-template-columns: repeat(3, 1fr);
-        gap: 3rem;
         justify-content: center;
         justify-items: center;
     }
 
-    .planes h2 {
+    .planes h2,
+    .servicios h2 {
         grid-column: 1 / -1;
         margin-bottom: 3rem;
     }
-    .menu__category {
-        margin-bottom: 0;
+    .cards,
+    .services{
+        grid-template-columns: repeat(3, 1fr);
+        width: 800px;
+        /* background-color: red; */
+    }
+    .card,
+    .servicio{
+        width: 30%;
     }
     .experience {
         display: grid;
