@@ -180,10 +180,11 @@ img {
 }
 
 .hero__content h1 {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 800;
+    font-family:'Teko';
 }
 
 .hero__tagline {
@@ -365,9 +366,10 @@ img {
 .planes h2{
     text-align: center;
     margin-bottom: 2rem;
-    font-family:'UnifrankturCook';
+    font-family:'Teko';
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-size: 2rem;
 }
 .texto-planes,
 .services-text{
@@ -400,8 +402,10 @@ img {
     text-align: center;
     justify-content: space-between;
     align-items: center;
-    font-weight: 600;
     background: rgba(158, 31, 31, 0.021);
+    font-family: 'Teko';
+    letter-spacing: 2.5px;
+    font-size: 1.1rem;
 }
 .card-icon{
     font-size: 1.5rem;
@@ -454,6 +458,9 @@ img {
 .profes h2{
     font-size: 2rem;
     margin-bottom: 2rem;
+    font-family: 'Teko';
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 .profes-grid{
     display: grid;
@@ -500,6 +507,10 @@ img {
 .contacto h2{
     font-size: 2rem;
     margin-bottom: 2rem;
+    font-family: 'Teko';
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    
 }
 .contacto_img{
     width: 180px;
