@@ -452,7 +452,8 @@ img {
 
 .profes {
     text-align: center;
-    padding: 4rem ;
+    padding: 3rem ;
+    /* justify-content: center; */
 }
 
 .profes h2{
@@ -463,10 +464,33 @@ img {
     text-transform: uppercase;
 }
 .profes-grid{
-    display: grid;
+    /* FLEX si es uno. GRID si son varios*/
+    display: grid; 
     gap: 2rem;
     justify-content: center;
+    justify-items: center;
+    flex-direction: row repeat(2, 1fr); 
+    /* grid-template-columns: repeat(2, 1fr); */
 }
+/* 
+.cards,
+.services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+.card,
+.servicio{
+    background: var(--color-surface);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+    width: 100%;
+} */
 .profe{
     background-color: var(--color-surface);
     border-radius: 15px;
@@ -474,7 +498,7 @@ img {
     margin-bottom: 1.2rem;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     transition: var(--transition);
-    max-width: 300px;
+    max-width: 400px;
 }
 .foto-profe{
     width: 120px;
@@ -486,7 +510,8 @@ img {
 }
 .profe-nombre{
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: 1.1px;
 }
 .profe:hover{
     transform: translateY(-5px);
@@ -576,7 +601,8 @@ img {
     }
 
     .planes,
-    .servicios {
+    .servicios,
+    .profes-grid {
         grid-template-columns: repeat(2, 1fr);
         justify-content: center;
         justify-items: center;
