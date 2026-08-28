@@ -687,6 +687,7 @@ img {
     .card,
     .servicio{
         width: 30%;
+        /* height: 30%; */
     }
     .experience {
         display: grid;
