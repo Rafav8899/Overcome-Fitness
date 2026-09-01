@@ -287,7 +287,7 @@ img {
 .servicio-header{
     padding: 1.2rem;
     /* display: flex; */
-     text-align: center;
+    text-align: center;
     justify-content: space-between;
     align-items: center;
     font-weight: 600;
@@ -300,6 +300,7 @@ img {
 .servicios {
     padding: 3rem 1.25rem;
     text-align: center;
+    background-color: var(--color-bg, #111111);
 }
 .servicios h2 {
     font-family: 'Teko';
@@ -478,7 +479,7 @@ img {
 .servicios {
     width: 100%;
     padding: 4rem 0;
-    background-color: var(--color-bg, #111111);
+    
 }
 
 .servicios h2 {
@@ -496,18 +497,25 @@ img {
 
 /* Lista de servicios */
 .services-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+    display: grid;
+    /* flex-direction: row; */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
     margin-bottom: 1.5rem;
+    background-color: red;
 }
 
 .servicio {
-    background: var(--color-surface, #272727);
+    /* background: var(--color-surface, #272727); */
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease;
+    /* width: 40px; */
 }
 
 .servicio-header {
@@ -597,7 +605,7 @@ img {
     .planes
     .servicios 
     {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         justify-content: center;
         justify-items: center;
     }
@@ -609,7 +617,7 @@ img {
     }
     .cards,
     .services{
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         width: 800px;
         /* background-color: red; */
     }
