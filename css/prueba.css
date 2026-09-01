@@ -507,7 +507,7 @@ img {
     grid-template-columns: repeat(2, minmax(200px, 1fr));
     gap: 1.2rem;
     margin-bottom: 1.5rem;
-    background-color: red;
+    /* background-color: red; */
     flex-direction: row;
     /* flex-wrap: wrap; */
     justify-content: center;
