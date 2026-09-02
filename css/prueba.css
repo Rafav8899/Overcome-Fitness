@@ -507,14 +507,12 @@ img {
     gap: 1.2rem;
     margin-bottom: 1.5rem;
     flex-direction: row;
-    /* flex-wrap: wrap; */
     justify-content: center;
     justify-self: center;
 }
 
 .servicio {
     background: var(--color-surface, #272727);
-    /* background-color: green; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
