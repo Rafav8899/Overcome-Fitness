@@ -503,7 +503,6 @@ img {
 /* Lista de servicios */
 .services-list {
     display: grid;
-    /* flex-direction: row; */
     grid-template-columns: repeat(2, minmax(200px, 1fr));
     gap: 1.2rem;
     margin-bottom: 1.5rem;
