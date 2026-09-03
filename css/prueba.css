@@ -207,9 +207,34 @@ img {
    SOBRE
 ========================= */
 
+/* ==========================================
+   1. CONTENEDORES PADRE (MOBILE-FIRST)
+========================================== */
+/* TODAS las secciones con imágenes de fondo deben tener position: relative */
+.sobre, 
+.servicios,
+.planes,
+.contacto {
+    position: relative; /* ¡CRUCIAL! Establece el límite para la imagen de esa sección */
+    width: 100%;
+    padding: 4rem 0;
+    overflow: hidden; /* Evita que la imagen sobresalga de la sección */
+    background-color: var(--color-bg, #111111);
+}
+
+
+
+.servicios,
 .sobre{
     /* background-color: green; */
     width: 100%;
+    position: relative;
+    padding: var(--padding-mobile);
+    overflow: hidden;
+}
+.sobre__content {
+    position:relative;
+    z-index: 2;
 }
 
 .sobre__grid {
@@ -222,7 +247,7 @@ img {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: var(--padding-mobile);
-    /* background-color: red; */
+    /* background-color: blue; */
     display: flex;
 }
 .imagenes{
@@ -234,19 +259,26 @@ img {
    CONTENEDOR DE IMAGEN Y DEGRADÉ LATERAL
 ========================================== */
 .sobre__media {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* transform: translate(-50%, -50%); */
     width: 100%;
     height: 100%;
-    min-height: 350px;
-    border-radius: 15px;
-    overflow: hidden;
+    /* min-height: 350px; */
+    /* border-radius: 15px; */
+    /* overflow: hidden; */
+    z-index: 1;
+    pointer-events: none;
 }
 
 .sobre__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    object-position: center center;
+    /* display: block; */
+    opacity: 0.25;
 }
 
 /* Capa de degradado sobre la imagen */
@@ -258,17 +290,17 @@ img {
     width: 100%;
     height: 100%;
     /* Degradé por defecto: Transparente a la derecha, color de fondo oscuro a la izquierda */
-    background: linear-gradient(to right, var(--color-bg, #111111) 0%, transparent 40%);
+    background: linear-gradient(to center, var(--color-bg, #11111100) 0%, transparent 40%);
     pointer-events: none;
 }
 
 /* Si la sección está invertida, el degradé debe entrar desde la derecha */
 .sobre__grid--reverse .sobre__media::after {
-    background: linear-gradient(to left, var(--color-bg, #111111) 0%, transparent 40%);
+    background: linear-gradient(to center, var(--color-bg, #11111100) 0%, transparent 40%);
 }
 
 .sobre-txt{
-    max-height: 190px;
+    max-height: 180px;
     overflow: hidden;
     position: relative;
     transition: max-height 0.5s ease;
@@ -284,8 +316,8 @@ img {
     height: 80px;
 
     background: linear-gradient(
-        rgba(217,217,217,0),
-        var(--color-bg)
+        rgba(7, 7, 7, 0),
+        #13131380
     );
 }
 /* cuando se abre */
@@ -301,7 +333,10 @@ img {
 /* botón */
 
 .btn-verMas{
-    margin-top: 1rem;
+    display:block;
+    margin-top: 1.5rem auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px 20px;
     border: none;
     background: var(--color-primary);
@@ -309,6 +344,8 @@ img {
     border-radius: 30px;
     cursor: pointer;
     font-weight: 600;
+    justify-self: center;
+    justify-items: center;
 }
 
 .btn-verMas:hover{
@@ -329,11 +366,16 @@ img {
     color: rgb(165, 163, 163);
 }
 
+.planes,
 .servicios {
     padding: 3rem 1.25rem;
+    /* padding: var(--padding-mobile); */
     text-align: center;
     background-color: var(--color-bg, #111111);
+    /* background-color: green; */
 }
+
+.planes h2,
 .servicios h2 {
     font-family: 'Teko';
     margin-bottom: 2rem;
@@ -342,6 +384,7 @@ img {
     font-size: 2rem;
 }
 
+.texto-planes,
 .services-text{
     text-align: center;
     max-width: 600px;
@@ -349,8 +392,8 @@ img {
     color:var(--color-muted);
 }
 
-.services-list,
-.cards{
+.cards,
+.services-list{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -550,6 +593,37 @@ img {
         font-size: 1.15rem;
     }
 
+.sobre-txt{
+    max-height: 180px;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.5s ease;
+}
+/* efecto desvanecido */
+
+.sobre-txt::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+
+    background: linear-gradient(
+        rgba(7, 7, 7, 0),
+        var(--color-bg)
+    );
+}
+/* cuando se abre */
+
+.sobre-txt.expandido{
+    max-height: 2000px;
+}
+
+.sobre-txt.expandido::after{
+    display: none;
+}
+
 .sobre__grid {
         display: grid;
         grid-template-columns: 2fr 1fr;
@@ -570,15 +644,21 @@ img {
     .sobre__media {
         position: sticky;
         top: 100px; /* Se queda fija mientras scrolleas los servicios */
+        transform: none;
+        left: auto;
+        width: 100%;
         height: 500px;
         border-radius: 15px;
         overflow: hidden;
+        z-index: auto;
     }
 
     .sobre__img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        /* width: 100%; */
+        /* height: 100%; */
+        /* object-fit: cover; */
+        opacity: 1;
+        object-position: center center;
     }
 
     /* Degradé lateral */
@@ -601,17 +681,19 @@ img {
 /* ==========================================
    SERVICIOS & ESTRUCTURA GRID
 ========================================== */
+.planes,
 .servicios {
     width: 100%;
     padding: 4rem 0;
     flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        grid-template-columns: repeat(2, 1fr);
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
 }
 
+.planes h2,
 .servicios h2 {
-        grid-column: 1 / -1;
+    grid-column: 1 / -1;
     font-family: 'Teko', sans-serif;
     font-size: 2.2rem;
     text-transform: uppercase;
@@ -626,33 +708,36 @@ img {
 }
 
 /* Lista de servicios */
+/* .cards, */
 .services-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(200px, 1fr));
     gap: 1.2rem;
     margin-bottom: 1.5rem;
-    flex-direction: row;
-    justify-content: center;
-    justify-self: center;
+    /* flex-direction: row; */
+    /* justify-content: center; */
+    align-items: center;
+    /* background-color: red; */
 }
 
+/* .card, */
 .servicio {
-    background: var(--color-surface, #272727);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    width: 45%;
-    max-width: none;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease;
+    /* background: var(--color-surface, #272727); */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+    /* height: fit-content; */
+    width: 100%;
+    /* max-width: none; */
+    /* border-radius: 12px; */
+    /* overflow: hidden; */
+    /* box-shadow: var(--shadow); */
+    /* transition: transform 0.3s ease; */
 }
 
 .servicio-header h3 {
     font-family: 'Teko', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1rem;
     letter-spacing: 1px;
     color: var(--color-text, #f2f2f2);
 }
@@ -713,6 +798,38 @@ img {
         max-width: 100%;
         font-size: 1.05rem;
     }
+
+    .sobre-txt{
+    max-height: 190px;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.5s ease;
+}
+/* efecto desvanecido */
+
+.sobre-txt::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+
+    background: linear-gradient(
+        rgba(7, 7, 7, 0),
+        var(--color-bg)
+    );
+}
+/* cuando se abre */
+
+.sobre-txt.expandido{
+    max-height: 2000px;
+}
+
+.sobre-txt.expandido::after{
+    display: none;
+}
+
     .sobre__grid {
         display: grid;
         grid-template-columns: 2fr 1fr;
@@ -724,8 +841,7 @@ img {
 
     /* PLANES */
     .planes
-    .servicios 
-    {
+    .servicios {
         grid-template-columns: repeat(2, 1fr);
         justify-content: center;
         justify-items: center;
@@ -736,10 +852,20 @@ img {
         grid-column: 1 / -1;
         margin-bottom: 3rem;
     }
+
+    .servicio-header h3 {
+    font-family: 'Teko', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    color: var(--color-text, #f2f2f2);
+}
+
     .cards,
     .services-list{
         grid-template-columns: repeat(2, 1fr);
         width: 800px;
+        justify-items: center;
+        /* background-color: red; */
     }
     .card,
     .servicio{
