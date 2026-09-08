@@ -6,7 +6,7 @@
     <title>OVERCOME-FITNESS</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/prueba.css">
     <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap" rel="stylesheet">
 </head>
@@ -24,11 +24,7 @@
             </div>
             <!-- <div class="logo">Overcome-Fitness</div> -->
             <nav class="nav">
-                <a href="#sobre">Nosotros</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#planes">Planes</a>
-                <a href="#contacto">Contacto</a>
-                <a href="prueba.html">Prueba</a>
+                <a href="index.html">Inicio</a>
             </nav>
         </div>
     </header>
@@ -44,35 +40,29 @@
     </section>
 
     <!-- MICRO HISTORIA -->
+
     <section class="sobre" id="sobre">
-        <div class="container">
-            <div class="sobre-txt" id="sobreTxt">
-            <p>
-                En <b><u>Overcome Fitness</u></b> creemos que el entrenamiento es mucho más que actividad física: es una herramienta para transformar el cuerpo, fortalecer la mente y desarrollar disciplina.
-            </p>
-            <p>
-                Actualmente, Overcome Fitness se centra en el desarrollo de entrenamientos y planificaciones personalizadas, adaptadas a los objetivos, necesidades y características de cada persona.
-            </p>
-            <p>
-                A través de programas de musculación y acondicionamiento físico, buscamos mejorar el rendimiento, desarrollar las capacidades físicas y generar progresos sostenibles en el tiempo.
-            </p>
-            <p>
-                Nuestro trabajo se basa en conocimientos sustentados en la evidencia científica, combinados con la experiencia y el análisis individual de cada proceso. Por eso, cada planificación busca ser segura, progresiva, adaptable y orientada a resultados.
-            </p>
-            <p>
-                El acompañamiento personalizado permite realizar un seguimiento continuo del proceso, ajustar las cargas, ejercicios, volumen e intensidad según la evolución de cada persona y adaptar el entrenamiento cuando sea necesario.
-            </p>
-            <p>
-                No importa si la persona está comenzando, si ya tiene experiencia o si busca mejorar su rendimiento: el objetivo es construir un proceso de entrenamiento acorde a su realidad y acompañarlo de manera constante.
-            </p>
-            <p>
-                En <b>Overcome Fitness</b> brindamos acompañamiento durante todo el proceso de entrenamiento, adaptando las propuestas a cada persona sin importar si tiene experiencia previa o está comenzando.
-            </p>
-    ⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
-            <p>
-                <h3>Nuestro enfoque</h3>
-            </p>
-            <p>
+        <div class="container sobre__grid">
+            <!-- Columna de Texto (Izquierda) -->
+            <div class="sobre__content">
+                <div class="sobre-txt" id="sobreTxt">
+                    <p>
+                        En <b><u>Overcome Fitness</u></b> creemos que el entrenamiento es mucho más que actividad física: es una herramienta para transformar el cuerpo, fortalecer la mente y desarrollar disciplina.
+                    </p>
+                    <p>
+                        El acompañamiento personalizado permite realizar un seguimiento continuo del proceso, ajustar las cargas, ejercicios, volumen e intensidad según la evolución de cada persona y adaptar el entrenamiento cuando sea necesario.
+                    </p>
+                    <p>
+                        No importa si la persona está comenzando, si ya tiene experiencia o si busca mejorar su rendimiento: el objetivo es construir un proceso de entrenamiento acorde a su realidad y acompañarlo de manera constante.
+                    </p>
+                    
+                    <hr class="separador">
+                    
+                    <h3>Nuestro enfoque</h3>
+                    <p>
+                        En <b>Overcome Fitness</b> cada planificación parte de una evaluación de los objetivos y necesidades de la persona.
+                    </p>
+                    <p>
                 En <b>Overcome Fitness</b> cada planificación parte de una evaluación de los objetivos y necesidades de la persona.
             </p>
             <p>
@@ -81,92 +71,118 @@
             <p>
                 Buscamos que cada persona no solamente entrene, sino que comprenda su proceso, progrese de manera planificada y construya hábitos que pueda sostener a largo plazo.
             </p>
-        </div>
-        <button class="btn-verMas" id="btnVerMas">
-            Ver más
-        </button>
+                </div>
+                
+                <button class="btn-verMas" id="btnVerMas">Ver más</button>
+            </div>
+
+            <!-- Columna de Imagen (Derecha) -->
+            <div class="sobre__media">
+                <img src="assets/img/img-1.jpg" alt="Entrenamiento Overcome Fitness" class="sobre__img">
+            </div>
         </div>
     </section>
 
-    <!-- PROPUESTA DE VALOR -->
+<!-- SECCIÓN INVERTIDA: Imagen a la izquierda, Texto a la derecha -->
     <section class="servicios" id="servicios">
-        <h2>Servicios</h2>
-        <p class="services-text">
-            Ofrecemos servicios diseñados para mejorar tu rendimiento físico, tu salud y tu disciplina, adaptándonos a cada persona y objetivo.
-        </p>
-        <div class="services">
+        <div class="container sobre__grid sobre__grid--reverse">
+            
+            <!-- Columna de Texto y Servicios -->
+            <div class="sobre__content">
+                <h2>Servicios</h2>
+                <p class="services-text">
+                    Ofrecemos servicios diseñados para mejorar tu rendimiento físico, tu salud y tu disciplina, adaptándonos a cada persona y objetivo.
+                </p>
 
-            <div class="servicio">
-                <div class="servicio-header">
-                    <h3>Rutina Personalizada</h3>
-                    <p>Programa de entrenamiento diseñado específicamente para vos, según tu nivel, objetivos y disponibilidad.</p>
+                <!-- Agrupamos los servicios en un contenedor propio -->
+                <div class="services-list">
+
+                    <div class="servicio">
+                        <div class="servicio-header">
+                            <h3>Rutina Personalizada</h3>
+                            <p>Entrenamiento diseñado según tu nivel, objetivos y disponibilidad.</p>
+                        </div>
+                        <div class="servicio-content">
+                            • Rutina mensual adaptada a tu objetivo <br>
+                            • Progresión estructurada <br>
+                            • Explicación de ejercicios <br>
+                            • Enfoque en técnica y rendimiento <br>
+                            • Uso personal (sin seguimiento)
+                        </div>
+                    </div>
+
+                    <div class="servicio">
+                        <div class="servicio-header">
+                            <h3>Preparación para Ingresos</h3>
+                            <p>Programas específicos para superar pruebas físicas.</p>
+                        </div>
+                        <div class="servicio-content">
+                            • Fuerzas de seguridad <br>
+                            • Profesorados <br>
+                            • Evaluaciones físicas
+                        </div>
+                    </div>
+
+                    <div class="servicio">
+                        <div class="servicio-header">
+                            <h3>Planificación con Seguimiento</h3>
+                            <p>Acompañamiento constante para asegurar tu progreso y maximizar resultados.</p>
+                        </div>
+                        <div class="servicio-content">
+                            La modalidad puede ser virtual o presencial. <br>
+                            • Seguimiento semanal <br>
+                            • Ajustes en la planificación <br>
+                            • Correcciones técnicas <br>
+                            • Contacto directo <br>
+                            • Apoyo en motivación y hábitos saludables
+                        </div>
+                    </div>
+
+                    <div class="servicio">
+                        <div class="servicio-header">
+                            <h3>Preparación Física para Deportistas</h3>
+                            <p>Entrenamiento orientado a mejorar el rendimiento deportivo en disciplinas específicas.</p>
+                        </div>
+                        <div class="servicio-content">
+                            • Desarrollo de fuerza, velocidad y resistencia <br>
+                            • Planificación según el deporte <br>
+                            • Mejora del rendimiento físico general <br>
+                            • Prevención de lesiones
+                        </div>
+                    </div>
+
                 </div>
-                <div class="servicio-content">
-                    •	Rutina mensual adaptada a tu objetivo <br>
-                    •	Progresión estructurada <br>
-                    •	Explicación de ejercicios <br>
-                    •	Enfoque en técnica y rendimiento <br>
-                    •	Uso personal (sin seguimiento)
-                </div>
+
+                <p class="services-text">
+                    Cada proceso es único. Por eso trabajamos de forma personalizada, acompañando no solo el entrenamiento, sino también la motivación y los hábitos, para lograr resultados reales y sostenibles.
+                </p>
             </div>
 
-            <div class="servicio">
-                <div class="servicio-header">
-                    <h3>Planificación con Segumiento</h3>
-                    <p>Acompañamiento constante para asegurar tu progreso y maximizar resultados.</p>
-                </div>
-                <div class="servicio-content">
-                    La modalidad puede ser virtual o presencial. <br>
-                    •	Seguimiento semanal <br>
-                    •	Ajustes en la planificación <br>
-                    •	Correcciones técnicas <br>
-                    •	Contacto directo <br>
-                    •	Apoyo en motivación y hábitos saludables
-                </div>
+            <!-- Columna de Imagen -->
+            <div class="sobre__media">
+                <img src="assets/img/img-3.jpg" alt="Servicios Overcome Fitness" class="sobre__img">
             </div>
 
-            <div class="servicio">
-                <div class="servicio-header">
-                    <h3>Preparación Física para Deportistas</h3>
-                    <p>Entrenamiento orientado a mejorar el rendimiento deportivo en disciplinas específicas.</p>
-                </div>
-                <div class="servicio-content">
-                    •	Desarrollo de fuerza, velocidad y resistencia <br>
-                    •	Planificación según el deporte <br>
-                    •	Mejora del rendimiento físico general <br>
-                    •	Prevención de lesiones <br>
-                </div>
-            </div>
-
-            <div class="servicio">
-                <div class="servicio-header">
-                    <h3>Preparación para Ingresos</h3>
-                    <p>Programas específicos para superar pruebas físicas.</p>
-                </div>
-                <div class="servicio-content">
-                    •	Fuerzas de seguridad <br>
-                    •	Profesorados <br>
-                    •	Evaluaciones físicas
-                </div>
-            </div>
         </div>
-        <p class="services-text">
-            Cada proceso es único. Por eso trabajamos de forma personalizada, acompañando no solo el entrenamiento, sino también la motivación y los hábitos, para lograr resultados reales y sostenibles.
-        </p>
     </section>
 
     <!-- PLANES -->
+
     <section class="planes" id="planes">
-        <h2>Nuestros Planes</h2>
-        <p class="texto-planes">
-            No importa tu nivel, lo importante es empezar. Elegí el plan que mejor se adapte a vos y empezá tu cambio hoy.
-        </p>
+        <div class="container sobre__grid">
+            <div class="sobre__content">
+                <h2>Nuestros Planes</h2>
+                <!-- <div class="sobre-text"> -->
+
+            <p class="texto-planes">
+                No importa tu nivel, lo importante es empezar. Elegí el plan que mejor se adapte a vos y empezá tu cambio hoy.
+            </p>
 
             <div class="cards">
                 
                 <div class="card">
                     <div class="card-header">
-                        <h3>🟢 PLAN START</h3>
+                        <h3>🟢 Planificación Personalizada con Seguimiento</h3>
                         <span class="card-icon">
                             <svg width="20" height="20" viewBox="0 0 24 24">
                                 <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2"/>
@@ -175,22 +191,25 @@
                         </span>
                     </div>
                     <div class="card-content">
-                        <p> <b>Tu punto de partida</b> </p>
+                        <p> <b>Entrená con una planificación diseñada para vos y un seguimiento virtual o presencial, continuo para asegurar tu progreso, realizar ajustes cuando sea necesario y no entrenar a ciegas.</b></p>
+                        <p><b><u>Incluye:</u></b></p>
                         <p>
-                            •	Planificación mensual 100% personalizada <br>
-                            •	Adaptada a tu objetivo (fuerza, hipertrofia, rendimiento, etc.) <br>
-                            •	Explicación de ejercicios <br>
-                            •	Uso libre (sin seguimiento)
+                            •	📅 Planificación mensual personalizada.<br>
+                            •	📈 Seguimiento semanal del progreso. <br>
+                            •	🔄 Ajustes según tu evolución. <br>
+                            •	🎥 Correcciones técnicas de los ejercicios. <br>
+                            •	💬 Contacto directo para resolver dudas y acompañarte durante el proceso.
+
                         </p>
 
                         Ideal si ya entrenás y necesitás una guía profesional
-                        
+                    
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>🔵 PLAN PRO</h3>
+                        <h3>🔵 ENTRENAMIENTO PERSONALIZADO</h3>
                         <span class="card-icon">
                             <svg width="20" height="20" viewBox="0 0 24 24">
                                 <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2"/>
@@ -199,55 +218,35 @@
                         </span>
                     </div>
                     <div class="card-content">
-                        <p> <b>El más elegido ⭐</b> </p>
+                        <p> <b>Transformacion completa</b> un servicio pensado para quienes buscan un acompañamiento cercano y personalizado en cada etapa de su proceso. Entrenamos juntos, adaptando el trabajo según tu objetivo, nivel y evolución</p>
+                        <p><b><u>Incluye:</u></b></p>
                         <p>
-                            •	Planificación mensual personalizada <br>
-                            •	Seguimiento semanal <br>
-                            •	Ajustes según el progreso <br>
-                            •	Correcciones técnicas <br>
-                            •   Contacto directo
+                            •	📅 Planificación mensual personalizada<br>
+                            •	👥 Acompañamiento durante cada entrenamiento <br>
+                            •	📈 Seguimiento constante de tu progreso <br>
+                            •	🔄 Ajustes progresivos según tu evolución <br>
+                            •   🎯 Corrección técnica y mejora de la ejecución <br>
+                            •   💬 Atención personalizada durante todo el proceso
                         </p>
 
-                        Para asegurar resultados y no entrenar a ciegas
-                        
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3>🔴 PLAN ELITE</h3>
-                        <span class="card-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24">
-                                <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2"/>
-                                <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </span>
-                    </div>
-                    <div class="card-content">
-                        <p><b> Transformación completa </b></p>
-                        <p>
-                            •	Planificación mensual personalizada <br>
-                            •	Seguimiento constante <br>
-                            •	Ajustes progresivos <br>
-                            •	Plan nutricional con nutricionista <br>
-                            •   Acompañamiento completo
-                        </p>
-                        Entrenamiento + nutrición = Resultados reales
+                        Entrenamiento + planificación + seguimiento = resultados reales.
                         
                     </div>
                 </div>
 
             </div>
-
-<!-- IMAGEN 4: ALINEADA A LA DERECHA -->
-        <!-- <div class="img-zigzag-container img-zigzag-right">
-            <img src="assets/img/3-JPG_0008.jpg" alt="Comunidad Overcome Fitness" class="img-zigzag">
-        </div> -->
-
             <p class="texto-planes">
                 Todos los planes se adaptan al nivel, experiencia y objetivos de cada persona, con acompañamiento desde cero si es necesario.
             </p>
+
+            <!-- </div> -->
+            </div>
+            <div class="sobre__media">
+                <img src="assets/img/img-6.jpg" alt="Entrenamiento Overcome Fitness" class="sobre__img">
+            </div>
+        </div>
     </section>
+
 
     <!-- PROFES -->
     <section class="profes" id="profes">
