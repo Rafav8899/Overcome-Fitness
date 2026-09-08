@@ -69,8 +69,6 @@ img {
 
 .header__container,
 .hero__content,
-.sobre,
-.values,
 .menu,
 .contacto,
 .footer,
@@ -80,11 +78,7 @@ img {
     padding: var(--padding-mobile);
 }
 
-.container{
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: var(--padding-mobile);
-}
+
 
 /* =========================
    HEADER
@@ -142,20 +136,7 @@ img {
     color: var(--color-header-text);
     transition: color 0.3s ease;
 }
-/*.theme-toggle
 
-.theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-    color: var(--color-text);
-    opacity: 0.7;
-}
-
-.theme-toggle:hover {
-    opacity: 1;
-} */
 
 /* =========================
    HERO
@@ -221,21 +202,105 @@ img {
     color: var(--color-header-text);
 }
 
+
 /* =========================
    SOBRE
 ========================= */
 
-.sobre {
-    text-align: center;
-    font-size: 1rem;
-    color: var(--color-muted);
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    /* padding-left: 3rem;
-    padding-right: 3rem; */
+/* ==========================================
+   1. CONTENEDORES PADRE (MOBILE-FIRST)
+========================================== */
+/* TODAS las secciones con imágenes de fondo deben tener position: relative */
+.sobre, 
+.servicios,
+.planes,
+.contacto {
+    position: relative; /* ¡CRUCIAL! Establece el límite para la imagen de esa sección */
+    width: 100%;
+    padding: 4rem 0;
+    overflow: hidden; /* Evita que la imagen sobresalga de la sección */
+    background-color: var(--color-bg, #111111);
 }
+
+
+
+.servicios,
+.sobre{
+    /* background-color: green; */
+    width: 100%;
+    position: relative;
+    padding: var(--padding-mobile);
+    overflow: hidden;
+}
+.sobre__content {
+    position:relative;
+    z-index: 2;
+}
+
+.sobre__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.container{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--padding-mobile);
+    /* background-color: blue; */
+    display: flex;
+}
+.imagenes{
+    /* background-color: blue; */
+    padding: 5rem;
+}
+
+/* ==========================================
+   CONTENEDOR DE IMAGEN Y DEGRADÉ LATERAL
+========================================== */
+.sobre__media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* transform: translate(-50%, -50%); */
+    width: 100%;
+    height: 100%;
+    /* min-height: 350px; */
+    /* border-radius: 15px; */
+    /* overflow: hidden; */
+    z-index: 1;
+    pointer-events: none;
+}
+
+.sobre__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    /* display: block; */
+    opacity: 0.25;
+}
+
+/* Capa de degradado sobre la imagen */
+.sobre__media::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Degradé por defecto: Transparente a la derecha, color de fondo oscuro a la izquierda */
+    background: linear-gradient(to center, var(--color-bg, #11111100) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+/* Si la sección está invertida, el degradé debe entrar desde la derecha */
+.sobre__grid--reverse .sobre__media::after {
+    background: linear-gradient(to center, var(--color-bg, #11111100) 0%, transparent 40%);
+}
+
 .sobre-txt{
-    max-height: 190px;
+    max-height: 180px;
     overflow: hidden;
     position: relative;
     transition: max-height 0.5s ease;
@@ -251,8 +316,8 @@ img {
     height: 80px;
 
     background: linear-gradient(
-        rgba(217,217,217,0),
-        var(--color-bg)
+        rgba(7, 7, 7, 0),
+        #13131380
     );
 }
 /* cuando se abre */
@@ -268,7 +333,10 @@ img {
 /* botón */
 
 .btn-verMas{
-    margin-top: 1rem;
+    display:block;
+    margin-top: 1.5rem auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px 20px;
     border: none;
     background: var(--color-primary);
@@ -276,38 +344,19 @@ img {
     border-radius: 30px;
     cursor: pointer;
     font-weight: 600;
+    justify-self: center;
+    justify-items: center;
 }
 
 .btn-verMas:hover{
     transform: scale(1.05);
 }
 
-/* =========================
-   VALORES / SERVICIOS
-========================= */
 
-/* .servicios {
-    padding: 3rem 1.25rem;
-    text-align: center;
-}
-
-.servicios h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-family:'UnifrankturCook';
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-.services-text{
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 2.5rem;
-    color:var(--color-muted);
-} */
 .servicio-header{
     padding: 1.2rem;
     /* display: flex; */
-     text-align: center;
+    text-align: center;
     justify-content: space-between;
     align-items: center;
     font-weight: 600;
@@ -316,46 +365,17 @@ img {
 .servicio-header p{
     color: rgb(165, 163, 163);
 }
-/*
-.servicio-content{
-    background-color: var(--color-surface);
-    transition: var(--transition);
-    box-shadow:var(--shadow);
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 2rem;
-    width: 100%;
-    cursor: pointer;
-}
-
-.servicio-header h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-    text-align: center;
-}
-
-.servicio p {
-    color: var(--color-muted);
-    font-size: 0.95rem;
-    text-align: center;
-}
-
-.servicio:hover{
-    transform: scale(1.05);
-    background-color: var(--color-secondary);
-    box-shadow: 0 0 15px rgba(34, 155, 13, 0.3);
-    color:var(--color-bg)
-} */ 
-
-/* =========================
-   PLANES / METODOLOGIA
-========================= */
 
 .planes,
 .servicios {
     padding: 3rem 1.25rem;
+    /* padding: var(--padding-mobile); */
     text-align: center;
+    background-color: var(--color-bg, #111111);
+    /* background-color: green; */
 }
+
+.planes h2,
 .servicios h2 {
     font-family: 'Teko';
     margin-bottom: 2rem;
@@ -363,14 +383,7 @@ img {
     letter-spacing: 2px;
     font-size: 2rem;
 }
-.planes h2{
-    text-align: center;
-    margin-bottom: 2rem;
-    font-family:'Teko';
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 2rem;
-}
+
 .texto-planes,
 .services-text{
     text-align: center;
@@ -378,14 +391,16 @@ img {
     margin: 0 auto 2.5rem;
     color:var(--color-muted);
 }
+
 .cards,
-.services{
+.services-list{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    padding-bottom: 2rem;
+    padding: 1rem;
 }
+
 .card,
 .servicio{
     background: var(--color-surface);
@@ -396,6 +411,7 @@ img {
     cursor: pointer;
     width: 100%;
 }
+
 .card-header {
     padding: 1.2rem;
     display: flex;
@@ -413,8 +429,8 @@ img {
     color: var(--color-primary);
     transition: transform 0.3s ease;
 }
-/* CONTENIDO (oculto) */
-.card-content, 
+
+.card-content,
 .servicio-content{
     max-height: 0;
     overflow: hidden;
@@ -424,23 +440,23 @@ img {
 
     transition: max-height 0.4s ease;
 }
-.card-content p, 
+
+.card-content p
 .servicio-content p {
     padding-bottom: 5px;
 }
 
-/* ACTIVO */
-.card.active .card-content, 
+.card.active .card-content,
 .servicio.active .servicio-content{
     max-height: 1000px;
     padding: 1rem 1.2rem 1.5rem;
 }
+
 .card.active .card-icon{
-    transform: rotate(45deg); /* + → × */
+    transform: rotate(45deg);
 }
 
-/* HOVER */
-.card:hover, 
+.card:hover,
 .servicio:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(57,255,20,0.2);
@@ -453,7 +469,13 @@ img {
 .profes {
     text-align: center;
     padding: 3rem ;
-    /* justify-content: center; */
+    /* background-image: linear-gradient(
+        rgba(0, 0, 0, 0.829),
+        rgba(0, 0, 0, 0.548)
+    ),
+    url("../assets/img/img-6.jpg");
+    background-size: cover;
+    background-position: center; */
 }
 
 .profes h2{
@@ -500,7 +522,6 @@ img {
     /* background: var(--color-primary); */
     box-shadow:0 15px 30px rgba(57,255,20,0.2) ;
 }
-
 
 /* =========================
    CONTACTO
@@ -572,39 +593,152 @@ img {
         font-size: 1.15rem;
     }
 
-    .servicios {
-        flex-direction: row;
-        flex-wrap: wrap;
+.sobre-txt{
+    max-height: 180px;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.5s ease;
+}
+/* efecto desvanecido */
+
+.sobre-txt::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+
+    background: linear-gradient(
+        rgba(7, 7, 7, 0),
+        var(--color-bg)
+    );
+}
+/* cuando se abre */
+
+.sobre-txt.expandido{
+    max-height: 2000px;
+}
+
+.sobre-txt.expandido::after{
+    display: none;
+}
+
+.sobre__grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
         gap: 2rem;
+        align-items: start; /* IMPORTANTE: Alinea los elementos arriba para que no estiren la imagen */
     }
 
-    .value {
-        flex: 1 1 45%;
+    /* Invertir columnas */
+    .sobre__grid--reverse {
+        direction: rtl;
     }
 
-    .planes,
-    .servicios,
-    .profes-grid {
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: center;
-        justify-items: center;
+    .sobre__grid--reverse > * {
+        direction: ltr; /* Mantiene la lectura normal de textos */
     }
 
-    .planes h2,
-    .servicios h2 {
-        grid-column: 1 / -1;
-    } 
-    .cards,
-    .services{
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+    /* Imagen fija al hacer scroll (Sticky) */
+    .sobre__media {
+        position: sticky;
+        top: 100px; /* Se queda fija mientras scrolleas los servicios */
+        transform: none;
+        left: auto;
+        width: 100%;
+        height: 500px;
+        border-radius: 15px;
+        overflow: hidden;
+        z-index: auto;
     }
-    .card,
-    .servicio{
-        width: 45%;
-        max-width: none;
+
+    .sobre__img {
+        /* width: 100%; */
+        /* height: 100%; */
+        /* object-fit: cover; */
+        opacity: 1;
+        object-position: center center;
     }
+
+    /* Degradé lateral */
+    .sobre__media::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, var(--color-bg, #111111) 0%, transparent 40%);
+        pointer-events: none;
+    }
+
+    .sobre__grid--reverse .sobre__media::after {
+        background: linear-gradient(to left, var(--color-bg, #111111) 0%, transparent 40%);
+    }
+
+
+/* ==========================================
+   SERVICIOS & ESTRUCTURA GRID
+========================================== */
+.planes,
+.servicios {
+    width: 100%;
+    padding: 4rem 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.planes h2,
+.servicios h2 {
+    grid-column: 1 / -1;
+    font-family: 'Teko', sans-serif;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+
+.services-text {
+    color: var(--color-muted, #b9b9b9);
+    margin-bottom: 1.5rem;
+}
+
+/* Lista de servicios */
+/* .cards, */
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    /* flex-direction: row; */
+    /* justify-content: center; */
+    align-items: center;
+    /* background-color: red; */
+}
+
+/* .card, */
+.servicio {
+    width: 100%;
+}
+
+.servicio-header h3 {
+    font-family: 'Teko', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: var(--color-text, #f2f2f2);
+}
+
+.servicio-header p {
+    font-size: 0.9rem;
+    color: var(--color-muted, #b9b9b9);
+}
+
+
+
 
     .profes-grid{
         display: grid;
@@ -651,15 +785,54 @@ img {
     }
 
     .sobre{
-        max-width: 700px;
+        max-width: 100%;
         font-size: 1.05rem;
     }
 
+    .sobre-txt{
+    max-height: 190px;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.5s ease;
+}
+/* efecto desvanecido */
+
+.sobre-txt::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+
+    background: linear-gradient(
+        rgba(7, 7, 7, 0),
+        var(--color-bg)
+    );
+}
+/* cuando se abre */
+
+.sobre-txt.expandido{
+    max-height: 2000px;
+}
+
+.sobre-txt.expandido::after{
+    display: none;
+}
+
+    .sobre__grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        align-items: center; /* IMPORTANTE: Alinea los elementos arriba para que no estiren la imagen */
+    }
+    
+
 
     /* PLANES */
-    .planes,
+    .planes
     .servicios {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         justify-content: center;
         justify-items: center;
     }
@@ -669,15 +842,24 @@ img {
         grid-column: 1 / -1;
         margin-bottom: 3rem;
     }
+
+    .servicio-header h3 {
+    font-family: 'Teko', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    color: var(--color-text, #f2f2f2);
+}
+
     .cards,
-    .services{
-        grid-template-columns: repeat(3, 1fr);
+    .services-list{
+        grid-template-columns: repeat(2, 1fr);
         width: 800px;
+        justify-items: center;
         /* background-color: red; */
     }
     .card,
     .servicio{
-        width: 30%;
+        width: 80%;
     }
     .experience {
         display: grid;
@@ -721,5 +903,4 @@ img {
      .footer  {
         margin-top: 0;
     }
-    /* .social */
 }
