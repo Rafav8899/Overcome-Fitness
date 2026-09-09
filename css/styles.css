@@ -618,18 +618,18 @@ img {
         rgba(7, 7, 7, 0),
         var(--color-bg)
     );
-}
-/* cuando se abre */
+    }
+    /* cuando se abre */
 
-.sobre-txt.expandido{
-    max-height: 2000px;
-}
+    .sobre-txt.expandido{
+        max-height: 2000px;
+    }
 
-.sobre-txt.expandido::after{
-    display: none;
-}
+    .sobre-txt.expandido::after{
+        display: none;
+    }
 
-.sobre__grid {
+    .sobre__grid {
         display: grid;
         grid-template-columns: 2fr 1fr;
         gap: 2rem;
@@ -683,67 +683,64 @@ img {
     }
 
 
-/* ==========================================
-   SERVICIOS & ESTRUCTURA GRID
-========================================== */
-.planes,
-.servicios {
-    width: 100%;
-    padding: 4rem 0;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    grid-template-columns: repeat(2, 1fr);
-}
+    /* ==========================================
+    SERVICIOS & ESTRUCTURA GRID
+    ========================================== */
+    .planes,
+    .servicios {
+        width: 100%;
+        padding: 4rem 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-.planes h2,
-.servicios h2 {
-    grid-column: 1 / -1;
-    font-family: 'Teko', sans-serif;
-    font-size: 2.2rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 1rem;
-}
-
-
-.services-text {
-    color: var(--color-muted, #b9b9b9);
-    margin-bottom: 1.5rem;
-}
-
-/* Lista de servicios */
-/* .cards, */
-.services-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
-    gap: 1.2rem;
-    margin-bottom: 1.5rem;
-    /* flex-direction: row; */
-    /* justify-content: center; */
-    align-items: center;
-    /* background-color: red; */
-}
-
-/* .card, */
-.servicio {
-    width: 100%;
-}
-
-.servicio-header h3 {
-    font-family: 'Teko', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    color: var(--color-text, #f2f2f2);
-}
-
-.servicio-header p {
-    font-size: 0.9rem;
-    color: var(--color-muted, #b9b9b9);
-}
+    .planes h2,
+    .servicios h2 {
+        grid-column: 1 / -1;
+        font-family: 'Teko', sans-serif;
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+    }
 
 
+    .services-text {
+        color: var(--color-muted, #b9b9b9);
+        margin-bottom: 1.5rem;
+    }
 
+    /* Lista de servicios */
+    /* .cards, */
+    .services-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        gap: 1.2rem;
+        margin-bottom: 1.5rem;
+        /* flex-direction: row; */
+        /* justify-content: center; */
+        align-items: center;
+        /* background-color: red; */
+    }
+
+    /* .card, */
+    .servicio {
+        width: 100%;
+    }
+
+    .servicio-header h3 {
+        font-family: 'Teko', sans-serif;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        color: var(--color-text, #f2f2f2);
+    }
+
+    .servicio-header p {
+        font-size: 0.9rem;
+        color: var(--color-muted, #b9b9b9);
+    }
 
     .profes-grid{
         display: grid;
