@@ -857,7 +857,6 @@ img {
         grid-template-columns: repeat(2, 1fr);
         width: 800px;
         justify-items: center;
-        /* background-color: red; */
     }
     .card,
     .servicio{
@@ -898,9 +897,7 @@ img {
     }
     .footer {
         display: flex;
-        /* justify-content: space-between; */
         align-items: center;
-        /* text-align: left; */
     }
      .footer  {
         margin-top: 0;
